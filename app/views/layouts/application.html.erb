@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PictweetCop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- ヘッダーを設置する。ヘッダーの中にタイトルの表示と、投稿ページへの遷移ボタンも設置。-->
+    <header>
+      <div class="header-left">
+        <!--PictweetCopをクリックするとトップページにも戻るようリンクを設置。-->
+        <h1><%= link_to "PictweetCop", root_path, class: "header-left__title" %></h1>
+      </div>
+      <div class="header-right">
+        <%= link_to "投稿する", new_tweet_path, class: "new-tweet" %>
+      </div>
+    </header>
+    <%= yield %>
+    <!-- フッターを設置する。Copyright PicTweetCop 2023.と表示する。-->
+    <footer>
+      <p>CopyRight PicTweetCop 2023.</p>
+    </footer>
+  </body>
+</html>

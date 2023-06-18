@@ -1,0 +1,14 @@
+<!-- 全てのTweetを取得し、textとnameを表示する-->
+<!-- 全体をdivタグで囲み、class名をcontents rowとする-->
+<div class="contents row">
+  <% @tweets.each do |tweet| %>
+    <!-- 表示するTweetは全て背景画像にtweet.imageを使用します-->
+    <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+      <!-- Tweetのtextとnameを表示します-->
+      <h2><%= tweet.text %></h2>
+      <p class="name">
+        <%= tweet.name %>
+      </p>
+    </div>
+  <% end %>
+</div>
