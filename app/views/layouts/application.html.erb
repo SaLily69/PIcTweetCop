@@ -11,8 +11,10 @@
 
   <body>
     <!-- ヘッダーを設置する。ヘッダーの中にタイトルの表示と、投稿ページへの遷移ボタンも設置。-->
-    <header>
-      <div class="header-left">
+    <!-- style.cssファイルからヘッダータグにヘッダークラスを適用する-->
+    <header class="header">
+      <!-- ヘッダーバー-->
+      
         <!--PictweetCopをクリックするとトップページにも戻るようリンクを設置。-->
         <h1><%= link_to "PictweetCop", root_path, class: "header-left__title" %></h1>
       </div>
