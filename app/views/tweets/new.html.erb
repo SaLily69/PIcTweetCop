@@ -1,0 +1,20 @@
+<!-- 全体をdivタグで囲み、class名をcontents rowとする-->
+<div class="contents row">
+  <!-- 投稿フォームをコンテナで囲む-->
+  <div class="container">
+    <!-- 投稿フォームのタイトル-->
+    <h1>新規投稿</h1>
+    <!-- form_withメソッドを使って、フォームを作成-->
+    <%= form_with model: @tweet, local: true do |f| %>
+      <!-- テキストフィールドを作成し、プレースホルダーにNicknameと入れる-->
+      <%= f.text_field :name, placeholder: "Nickname" %>
+      <!-- テキストフィールドを作成し、プレースホルダーにImage URLと入れる-->
+      <%= f.text_field :image, placeholder: "Image URL" %>
+      <!-- テキストエリアを作成し、プレースホルダーにtextと入れる。-->
+      <%= f.text_area :text, placeholder: "text", rows:"10" %>
+      <!-- 送信ボタンを作成-->
+      <%= f.submit "投稿する" %>
+    <% end %>
+  </div>
+</div>
+

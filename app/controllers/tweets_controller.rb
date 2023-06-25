@@ -7,4 +7,38 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
   end
+
+  def new
+    @tweet = Tweet.new
+  end
+
+  def create
+    Tweet.create(tweet_params)
+  end
+
+  # def edit
+  # end
+
+  # def update
+  #   if @tweet.update(tweet_params)
+  #     redirect_to tweets_path, notice: "投稿を編集しました"
+  #   else
+  #     render :edit
+  #   end
+  # end
+
+  # def destroy
+  #   @tweet.destroy
+  #   redirect_to tweets_path, notice:"投稿を削除しました"
+  # end
+
+  private
+  def tweet_params
+    params.require(:tweet).permit(:name, :image, :text)
+  end
+
+  # def set_tweet
+  #   @tweet = Tweet
+  # end
+
 end

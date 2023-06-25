@@ -1,0 +1,21 @@
+<!-- 全体をdivタグで囲む。class名をcontents rowとする-->
+<div class="contents row">
+  <!-- 投稿完了の表示をコンテナで囲む-->
+  <div class="container">
+    <!-- 投稿が完了しました。と表示する-->
+    <p>投稿が完了しました。</p>
+    <!-- トップページへのリンクをボタンで設置する。-->
+    <%= link_to "トップページへ戻る", root_path, class: "btn" %>
+    <!-- style -->
+    <style>
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #fff;
+        margin-top: 20px;
+      }
+  </div>
+</div>
+
