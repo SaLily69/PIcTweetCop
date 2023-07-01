@@ -27,10 +27,12 @@ class TweetsController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   @tweet.destroy
-  #   redirect_to tweets_path, notice:"投稿を削除しました"
-  # end
+  def destroy
+    tweet = Tweet.find(params[:id])
+    tweet.destroy
+    # redirect_to tweets_path, notice:"投稿を削除しました"
+    # 提案してくれたけど削除完了画面も実装したいので上記不要
+  end
 
   private
   def tweet_params

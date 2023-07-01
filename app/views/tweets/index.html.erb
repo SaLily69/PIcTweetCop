@@ -4,7 +4,53 @@
   <% @tweets.each do |tweet| %>
     <!-- 表示するTweetは全て背景画像にtweet.imageを使用します-->
     <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-      <!-- Tweetのtextとnameを表示します-->
+    <!-- イメージタグでarrow_top.pngを表示する。-->
+      <!-- class名をtoggle listとしてdivタグ作成-->
+      <div class="more">
+        <span><%= image_tag "arrow_top.png" %></span>
+        <!-- class名をtoggle listとしてulタグ作成-->
+        <ul class="toggle list">
+          <!-- class名をtoggle list menuとしてliタグ作成-->
+          <!--li class="toggle list menu" -->
+            <!-- リンクを設置する。編集ページへのリンクを設置する。-->
+            <!-- %= link_to "編集", edit_tweet_path(tweet.id) % -->
+          <!-- /li -->
+          <!-- class名をtoggle list menuとしてliタグ作成-->
+          <li class="toggle list menu">
+            <!-- リンクを設置する。削除ページへのリンクを設置する。-->
+            <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: "削除しますか？" } %>
+          </li>
+        </ul>
+      </div>
+      <!-- styleタグ-->
+      <style>
+        .more {
+          position: relative;
+          display: inline-block;
+        }
+        .more ul {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          padding: 10px 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #fff;
+          display: none;
+        }
+        .more ul li {
+          padding: 5px 0;
+          border-bottom: 1px solid #eee;
+        }
+        .more ul li:last-child {
+          border-bottom: none;
+        }
+        .more:hover ul {
+          display: block;
+        }
+      </style>
+      <!-- Tweetのtextとnameを表示する-->
       <h2><%= tweet.text %></h2>
       <p class="name">
         <%= tweet.name %>
