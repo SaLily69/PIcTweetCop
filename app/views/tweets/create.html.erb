@@ -3,9 +3,11 @@
   <!-- 投稿完了の表示をコンテナで囲む-->
   <div class="container">
     <!-- 投稿が完了しました。と表示する-->
-    <p>投稿が完了しました。</p>
-    <!-- トップページへのリンクをボタンで設置する。-->
-    <%= link_to "投稿一覧へ戻る", root_path, class: "btn" %>
+    <div class="task message">
+      <p>投稿が完了しました。</p>
+      <!-- トップページへのリンクをボタンで設置する。-->
+      <%= link_to "投稿一覧へ戻る", root_path, class: "btn" %>
+    </div>
     <!-- style -->
     <style>
       .btn {
@@ -16,6 +18,11 @@
         background-color: #fff;
         margin-top: 20px;
       }
+      /* task message 中央寄せ */
+      .task.message {
+        text-align: center;
+      }
+    </style>
   </div>
 </div>
 
