@@ -1,0 +1,27 @@
+<!-- 全体をdivタグで囲む。class名をcontents rowとする-->
+<div class="contents row">
+  <!-- 更新完了の表示をコンテナで囲む-->
+  <div class="container">
+    <!-- 更新が完了しました。と表示する-->
+    <div class="task message">
+      <p>更新が完了しました。</p>
+      <!-- トップページへのリンクをボタンで設置する。-->
+      <%= link_to "投稿一覧へ戻る", root_path, class: "btn" %>
+    </div>
+    <!-- style -->
+    <style>
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #fff;
+        margin-top: 20px;
+      }
+      /* task message 中央寄せ */
+      .task.message {
+        text-align: center;
+      }
+    </style>
+  </div>
+</div>

@@ -2,8 +2,8 @@
 <div class="contents row">
   <!-- 投稿フォームをコンテナで囲む-->
   <div class="container">
-    <!-- 投稿フォームのタイトル-->
-    <h1>新規投稿</h1>
+    <!-- 編集フォームのタイトル-->
+    <h1>投稿編集</h1>
     <!-- form_withメソッドを使って、フォームを作成-->
     <%= form_with model: @tweet, local: true do |f| %>
       <!-- テキストフィールドを作成し、プレースホルダーにNicknameと入れる-->
@@ -16,13 +16,11 @@
       <%= f.submit "送信" %>
     <% end %>
   </div>
-  <!-- styleタグ-->
   <style>
-    /* 投稿フォームのタイトル */
+    /* 編集フォームのタイトル */
     h1 {
       text-align: center;
       margin-bottom: 30px;
     }
   </style>
 </div>
-

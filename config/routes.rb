@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   #ルートパスへのアクセスをtweetsコントローラーのindexアクションに設定
   root to: 'tweets#index'
-  #tweetsコントローラーに対して、indexとnew、create、destroyのルーティングを設定
-  resources :tweets, only: [:index, :new, :create, :destroy]
+  #tweetsコントローラーに対して、indexとnew、create、destroy、edit、updateのルーティングを設定
+  resources :tweets, only: [:index, :new, :create, :destroy, :edit, :update]
 end
 
 # resoまで打つと、resources :users の提案

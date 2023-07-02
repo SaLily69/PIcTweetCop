@@ -16,16 +16,14 @@ class TweetsController < ApplicationController
     Tweet.create(tweet_params)
   end
 
-  # def edit
-  # end
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end
 
-  # def update
-  #   if @tweet.update(tweet_params)
-  #     redirect_to tweets_path, notice: "投稿を編集しました"
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    tweet = Tweet.find(params[:id]) #findメソッドでidを取得し、tweet変数に代入
+    tweet.update(tweet_params) #updateメソッドでtweet_paramsを更新
+  end
 
   def destroy
     tweet = Tweet.find(params[:id])
@@ -38,6 +36,7 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:name, :image, :text)
   end
+  #privateメソッドはcreateメソッド作成中にcopilotから提案された。
 
   # def set_tweet
   #   @tweet = Tweet

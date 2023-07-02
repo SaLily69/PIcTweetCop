@@ -11,10 +11,10 @@
         <!-- class名をtoggle listとしてulタグ作成-->
         <ul class="toggle list">
           <!-- class名をtoggle list menuとしてliタグ作成-->
-          <!--li class="toggle list menu" -->
-            <!-- リンクを設置する。編集ページへのリンクを設置する。-->
-            <!-- %= link_to "編集", edit_tweet_path(tweet.id) % -->
-          <!-- /li -->
+          <li class="toggle list menu" >
+            <!-- リンクを設置する。編集ページへのリンクを設置する-->
+            <%= link_to "編集", edit_tweet_path(tweet.id), method: :get %>
+          </li>
           <!-- class名をtoggle list menuとしてliタグ作成-->
           <li class="toggle list menu">
             <!-- リンクを設置する。削除ページへのリンクを設置する。-->
@@ -22,7 +22,7 @@
           </li>
         </ul>
       </div>
-      <!-- styleタグ　-->
+      <!-- styleタグ -->
       <style>
         .more {
           position: relative;
